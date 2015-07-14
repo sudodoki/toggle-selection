@@ -33,30 +33,44 @@ module.exports = function () {
 
 var selection = document.getSelection();
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener('DOMContentLoaded', function(event) {
   setTimeout(function() {
-    if (!selection.rangeCount) return;
+    if (!selection.rangeCount) { // for demo purposes only
+      return;
+    }
 
-    var range = selection.getRangeAt(0);
-    console.log(range);
+    var active = document.activeElement;
+    var ranges = Array.apply(Array, {
+      length: selection.rangeCount
+    }).map(function(range, index) {
+      return selection.getRangeAt(index);
+    });
+
+    switch (active.tagName.toUpperCase()) { // .toUpperCase handles XHTML
+      case 'INPUT':
+      case 'TEXTAREA':
+        active.blur();
+        break;
+
+      default:
+        active = null;
+    }
+
     selection.removeAllRanges();
-    // TODO: check whether selection range is in an input or textarea
-    // Selection API does not provide a way to do this
-    // If selected text is in an input or textaren, need to blur that element
-    // Because if we don't, restored selection will not be rehighlighted
 
     setTimeout(function() {
-      // TODO: check whether selection.rangeCount is 0 before addRange call
-      // This is what caused exception you showed me in the bar
-      // Even "Caret" selection prevented previous selection from being added
-      // I think we should remove "Caret" selections because the time range
-      // won't be 1000 ms as it is now, it will be much much shorter
-      // User won't be able to select anything sane
+      selection.type == 'Caret' &&
+      selection.removeAllRanges();
 
-      selection.addRange(range);
+      if (!selection.rangeCount) {
+        ranges.forEach(function(range) {
+          selection.addRange(range);
+        });
+      }
 
+      active &&
+      active.focus();
       console.log('added');
-      document.querySelector('textarea').focus(); // doesn't work w/o blur
     }, 1000);
 
     console.log('copyied');
