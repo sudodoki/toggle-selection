@@ -54,12 +54,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
       default:
         active = null;
+        break;
     }
 
     selection.removeAllRanges();
 
     setTimeout(function() {
-      selection.type == 'Caret' &&
+      selection.type === 'Caret' &&
       selection.removeAllRanges();
 
       if (!selection.rangeCount) {
