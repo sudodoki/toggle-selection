@@ -28,3 +28,37 @@ module.exports = function () {
     select(previousRange);
   }
 }
+
+///
+
+var selection = document.getSelection();
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  setTimeout(function() {
+    if (!selection.rangeCount) return;
+
+    var range = selection.getRangeAt(0);
+    console.log(range);
+    selection.removeAllRanges();
+    // TODO: check whether selection range is in an input or textarea
+    // Selection API does not provide a way to do this
+    // If selected text is in an input or textaren, need to blur that element
+    // Because if we don't, restored selection will not be rehighlighted
+
+    setTimeout(function() {
+      // TODO: check whether selection.rangeCount is 0 before addRange call
+      // This is what caused exception you showed me in the bar
+      // Even "Caret" selection prevented previous selection from being added
+      // I think we should remove "Caret" selections because the time range
+      // won't be 1000 ms as it is now, it will be much much shorter
+      // User won't be able to select anything sane
+
+      selection.addRange(range);
+
+      console.log('added');
+      document.querySelector('textarea').focus(); // doesn't work w/o blur
+    }, 1000);
+
+    console.log('copyied');
+  }, 2000);
+});
