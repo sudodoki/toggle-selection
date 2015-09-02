@@ -1,6 +1,0 @@
-https://github.com/luwes/selection-polyfill
-https://github.com/Railsreactor/justreachout/blob/31dca18a6288f2511170a74f795f55ff849c493d/app/assets/javascripts/admin/form_templates.coffee
-http://help.dottoro.com/ljpqodrs.php
-https://github.com/search?l=javascript&p=2&q=cloneRange&type=Code&utf8=%E2%9C%93
-https://github.com/bmeck/Lovelace/blob/15131063d2e8eaefa2734060d2034a9b466c3cfa/js/lovelace/formatter/sectioned/Sectioned.js
-http://stackoverflow.com/questions/3169786/clear-text-selection-with-javascript
