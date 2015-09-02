@@ -1,12 +1,18 @@
 {
   "name": "toggle-selection",
   "version": "1.0.0",
-  "description": "",
+  "description": "Toggle current selected content in browser",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["selection", "toggle", "browser", "deselect"],
   "author": "sudodoki <smd.deluzion@gmail.com> (sudodoki.name)",
-  "license": "MIT"
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Aleksej Shvajka",
+      "url": "https://github.com/shvaikalesh"
+    }
+  ]
 }
