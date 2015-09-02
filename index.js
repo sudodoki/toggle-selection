@@ -17,5 +17,5 @@ module.exports = function () {
   return function removeSelection() {
     deselectAll();
     select(previousRange);
-  }
-}
+  };
+};
