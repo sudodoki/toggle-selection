@@ -1,6 +1,6 @@
 {
   "name": "toggle-selection",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Toggle current selected content in browser",
   "main": "index.js",
   "scripts": {
