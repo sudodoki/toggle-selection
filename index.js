@@ -2,7 +2,7 @@
     if (typeof define === 'function' && define.amd) {
         define([], factory);
     } else if (typeof module === 'object' && module.exports) {
-        module.exports = module.exports.default = factory();
+        module.exports.default = module.exports = factory();
     } 
 }(this, function () {
     function toggle() {
