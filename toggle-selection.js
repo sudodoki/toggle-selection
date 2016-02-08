@@ -1,6 +1,4 @@
-var module = module || {};
-
-module.exports = function () {
+export default function toggle() {
   var selection = document.getSelection();
   if (!selection.rangeCount) {
     return function () {};
@@ -37,4 +35,4 @@ module.exports = function () {
     active &&
     active.focus();
   };
-};
+}

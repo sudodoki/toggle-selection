@@ -2,13 +2,24 @@
   "name": "toggle-selection",
   "version": "1.0.4",
   "description": "Toggle current selected content in browser",
-  "main": "index.js",
+  "main": "toggle-selection.cjs.js",
+  "browser": "toggle-selection.umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel:commonjs": "babel toggle-selection.js --presets=es2015 --plugins=transform-es2015-modules-commonjs --out-file=toggle-selection.cjs.js",
+    "babel:umd": "babel toggle-selection.js --presets=es2015 --plugins=transform-es2015-modules-umd --out-file=toggle-selection.umd.js",
+    "prepublish": "npm run babel:commonjs && npm run babel:umd"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.5.0",
+    "babel-preset-es2015": "~6.5.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "~6.5.0",
+    "babel-plugin-transform-es2015-modules-umd": "~6.5.0"
   },
   "keywords": ["selection", "toggle", "browser", "deselect"],
   "author": "sudodoki <smd.deluzion@gmail.com> (sudodoki.name)",
   "license": "MIT",
+  "repository": "sudodoki/toggle-selection",
   "contributors": [
     {
       "name": "Aleksej Shvajka",
