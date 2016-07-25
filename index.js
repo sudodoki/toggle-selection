@@ -1,4 +1,3 @@
-var module = module || {};
 
 module.exports = function () {
   var selection = document.getSelection();
