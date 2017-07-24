@@ -3,6 +3,10 @@
   "version": "1.0.5",
   "description": "Toggle current selected content in browser",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudodoki/toggle-selection"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
