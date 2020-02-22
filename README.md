@@ -13,6 +13,6 @@ reselect(); // restore selection
 
 All credits go to [@shvaikalesh](https://github.com/shvaikalesh).
 
-# [Example](https://github.com/sudodoki/toggle-selection/blob/master/example)
+# [Example](http://sudodoki.name/toggle-selection/example/)
 
 ![example recording](http://g.recordit.co/YPu6mHvcKe.gif)
