@@ -3,11 +3,19 @@
   "version": "1.0.6",
   "description": "Toggle current selected content in browser",
   "main": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "files": ["index.js", "index.mjs", "index.d.ts", "index.d.mts"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sudodoki/toggle-selection"
   },
   "scripts": {
+    "prepack": "node --eval \"fs.writeFileSync('./index.mjs', fs.readFileSync('./index.js', 'utf8').replace('module.exports = ', 'export default '), 'utf8');\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

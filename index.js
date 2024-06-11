@@ -1,5 +1,5 @@
 
-module.exports = function () {
+module.exports = function deselect() {
   var selection = document.getSelection();
   if (!selection.rangeCount) {
     return function () {};
@@ -23,7 +23,7 @@ module.exports = function () {
   }
 
   selection.removeAllRanges();
-  return function () {
+  return function reselect() {
     selection.type === 'Caret' &&
     selection.removeAllRanges();
 
