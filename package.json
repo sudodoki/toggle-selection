@@ -3,12 +3,26 @@
   "version": "1.0.6",
   "description": "Toggle current selected content in browser",
   "main": "index.js",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.js"
+    }
+  },
+  "type": "commonjs",
+  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sudodoki/toggle-selection"
+    "url": "git+https://github.com/sudodoki/toggle-selection.git"
   },
   "scripts": {
+    "check": "publint",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "publint": "^0.3.18"
   },
   "keywords": [
     "selection",
