@@ -1,6 +1,6 @@
 {
   "name": "toggle-selection",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Toggle current selected content in browser",
   "main": "index.js",
   "module": "index.mjs",
@@ -18,7 +18,12 @@
       "default": "./index.js"
     }
   },
-  "files": ["index.js", "index.mjs", "index.d.ts", "index.d.mts"],
+  "files": [
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "index.d.mts"
+  ],
   "type": "commonjs",
   "sideEffects": false,
   "changelog": {

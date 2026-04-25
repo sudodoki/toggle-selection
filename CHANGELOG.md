@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.1.0
+
+[compare changes](https://github.com/sudodoki/toggle-selection/compare/v2.0.0...v2.1.0)
+
+### 🏡 Chore
+
+- Add typescript typings ([ae15b05](https://github.com/sudodoki/toggle-selection/commit/ae15b05))
+- Add changelog ([f3f2866](https://github.com/sudodoki/toggle-selection/commit/f3f2866))
+- Remove authors ([0d055df](https://github.com/sudodoki/toggle-selection/commit/0d055df))
+
 ## [2.0.0](https://github.com/sudodoki/toggle-selection/compare/v1.0.6...v2.0.0) (2026-04-06)
 
 ### 🏡 Chore
