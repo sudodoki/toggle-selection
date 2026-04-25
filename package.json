@@ -21,8 +21,8 @@
   "files": ["index.js", "index.mjs", "index.d.ts", "index.d.mts"],
   "type": "commonjs",
   "sideEffects": false,
-  "changelogen": {
-    "contributors": false
+  "changelog": {
+    "noAuthors": true
   },
   "repository": {
     "type": "git",
