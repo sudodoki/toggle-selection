@@ -21,11 +21,18 @@
   "files": ["index.js", "index.mjs", "index.d.ts", "index.d.mts"],
   "type": "commonjs",
   "sideEffects": false,
+  "changelogen": {
+    "contributors": false
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sudodoki/toggle-selection.git"
   },
   "scripts": {
+    "changelog": "npx changelogen@0.6.2 --no-bump --output CHANGELOG.md",
+    "release:patch": "npx changelogen@0.6.2 --release --patch",
+    "release:minor": "npx changelogen@0.6.2 --release --minor",
+    "release:major": "npx changelogen@0.6.2 --release --major",
     "check": "publint",
     "preversion": "npm run check",
     "test": "echo \"Error: no test specified\" && exit 1"
