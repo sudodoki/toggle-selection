@@ -4,13 +4,21 @@
   "description": "Toggle current selected content in browser",
   "main": "index.js",
   "module": "index.mjs",
+  "types": "index.d.ts",
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "require": "./index.js",
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      },
       "default": "./index.js"
     }
   },
+  "files": ["index.js", "index.mjs", "index.d.ts", "index.d.mts"],
   "type": "commonjs",
   "sideEffects": false,
   "repository": {
@@ -19,6 +27,7 @@
   },
   "scripts": {
     "check": "publint",
+    "preversion": "npm run check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
