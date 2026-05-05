@@ -1,19 +1,20 @@
-
-module.exports = function () {
+module.exports = function() {
   var selection = document.getSelection();
   if (!selection.rangeCount) {
-    return function () {};
+    return function() {};
   }
-  var active = document.activeElement;
+  var active = document.activeElement || document.body;
 
   var ranges = [];
   for (var i = 0; i < selection.rangeCount; i++) {
     ranges.push(selection.getRangeAt(i));
   }
 
-  switch (active.tagName.toUpperCase()) { // .toUpperCase handles XHTML
-    case 'INPUT':
-    case 'TEXTAREA':
+  switch (
+    active.tagName.toUpperCase() // .toUpperCase handles XHTML
+  ) {
+    case "INPUT":
+    case "TEXTAREA":
       active.blur();
       break;
 
@@ -23,9 +24,8 @@ module.exports = function () {
   }
 
   selection.removeAllRanges();
-  return function () {
-    selection.type === 'Caret' &&
-    selection.removeAllRanges();
+  return function() {
+    selection.type === "Caret" && selection.removeAllRanges();
 
     if (!selection.rangeCount) {
       ranges.forEach(function(range) {
@@ -33,7 +33,6 @@ module.exports = function () {
       });
     }
 
-    active &&
-    active.focus();
+    active && active.focus();
   };
 };
